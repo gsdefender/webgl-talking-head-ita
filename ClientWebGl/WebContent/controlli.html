@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Tesina Cipolla-Monte Informatica grafica</title>
+
+<link rel="stylesheet" href="clientWebGl.css" type="text/css">
+<script src="libs/three.min.js" type="text/javascript"></script>
+<script src="libs/TrackballControls.js" type="text/javascript"></script>
+
+<script src="libs/jquery-1.6.4.js" type="text/javascript"></script>
+<script src="libs/jquery.mousewheel.js" type="text/javascript"></script>
+<script src="libs/RequestAnimationFrame.js" type="text/javascript"></script>
+<script src="sim/sim.js" type="text/javascript"></script>
+
+<script src="pupoApp.js" type="text/javascript"></script>
+<script src="pupo.js" type="text/javascript"></script>
+ <script src="clientWebGl.js" type="text/javascript"></script>
+
+
+	
+</head>
+<body class="finestraControlli" onload="inizializzazione();">
+<h1 class="title">La prima talking head in WebGL</h1>
+<form method="post" action="" name="moduloClientWebGl">
+<div>
+<fieldset class="fieldset-auto-width">
+<legend>Text-To-Speech</legend>
+<label for="frase" id="labelFrase">Frase:&nbsp;&nbsp;&nbsp;&nbsp;</label> <input type="text" name="frase" id="frase"/><br/>
+<label for="velocita" id="labelVelocita">Velocit&agrave;:</label> <input type="number" name="velocita" class="integer" id="velocita" value="120" size="3"/>
+</fieldset>
+</div>
+<br/><div>
+<fieldset class="fieldset-auto-width">
+<legend>Emozione</legend>
+<input type="checkbox" id="emozioneInterattiva" name="emozioneInterattiva" value="true" onclick="specificaEmozioneInterattiva(document.getElementById('emozioneInterattiva').checked)">Specifica interattivamente l'emozione<br/>
+<label for="emozione" id="labelEmozione">Emozione:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+<select name="emozione" id="emozione" form="moduloClientWebGl" onchange="controllaEmozione();">
+  <option value="neutral" selected="selected">Neutrale</option>
+  <optgroup label="Positive">
+  	<option value="*su">Sorpreso</option>
+	<option value="*h">Felice</option>
+	<option value="*f_sa">Felice e sorpreso</option>
+	</optgroup>
+  
+  <optgroup label="Negative">
+    <option value="*d">Disgustato</option>
+	<option value="*sa">Triste</option>
+	<option value="*a">Arrabbiato</option>
+	<option value="*a_d">Arrabbiato e disgustato</option>
+	<option value="*f">Impaurito</option>
+	<option value="*f_sa">Impaurito e triste</option>
+</optgroup>
+</select><br/>
+<label for="percentuale" id="labelPercentuale">Percentuale:</label>
+<input type="number" name="percentuale" id="percentuale" class="integer" min="1" max="100" value="100" size="3"/>
+<span id="segnoPercentuale">%</span>
+</fieldset>
+</div><br/>
+<input type="button" value="Invia richiesta" onclick="inviaRichiesta(); return true;">
+
+</form>
+
+</body>
+</html>

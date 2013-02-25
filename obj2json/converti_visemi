@@ -1,0 +1,9 @@
+#!/bin/bash
+
+while [ $1 ]
+do
+	JS_NAME="$(basename $1 .obj).js"
+	rm -f "$2/$JS_NAME"
+        python convert_obj_three.py -i "$1" -o "output2/emozioni/$JS_NAME"
+        shift
+done

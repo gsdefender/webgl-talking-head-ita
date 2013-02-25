@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Tesina Cipolla-Monte Informatica grafica</title>
+
+<link rel="stylesheet" href="clientWebGl.css" type="text/css">
+	
+<script src="libs/three.min.js" type="text/javascript"></script>
+<script src="libs/TrackballControls.js" type="text/javascript"></script>
+
+<script src="libs/jquery-1.6.4.js" type="text/javascript"></script>
+<script src="libs/jquery.mousewheel.js" type="text/javascript"></script>
+<script src="libs/RequestAnimationFrame.js" type="text/javascript"></script>
+<script src="sim/sim.js" type="text/javascript"></script>
+
+<script src="pupoApp.js" type="text/javascript"></script>
+<script src="pupo.js" type="text/javascript"></script>
+ <script src="clientWebGl.js" type="text/javascript"></script>
+
+
+	<script>
+
+	var renderer = null;
+	var scene = null;
+	var camera = null;
+	var mesh = null;
+	
+	$(document).ready(
+		function() {
+			var container = document.getElementById("container");
+				
+			document.app=new PupoApp();
+			document.app.init({ container: container });
+			
+			document.model= new Pupo(); 
+ 			document.model.settings = { 
+					url : "http://localhost:8080/ServerWebGl/Visemi/frase.js", 
+					audio_url: "http://localhost:8080/ServerWebGl/MandaWAV",
+					durate_visemi: new Array(),
+					scale:0.23, 
+					animating: false};
+
+			document.model.init(document.model.settings);
+
+			apriFinestraControlli();
+			
+			document.app.addModel(document.model); // aggiungiamo la mesh alla foglia del DOM relativa a pupoApp
+			document.app.run();
+		}
+	);
+	</script>
+
+</head>
+<body class="finestraPrincipale">
+	<h1 class="title">La prima talking head in WebGL</h1>
+    <div id="container"></div>
+	<div id="prompt">
+	Fare click con il mouse per manipolare il modello: Pulsante sinistro = rotazione, Pulsante destro = pan	</div>
+</body>
+</html>

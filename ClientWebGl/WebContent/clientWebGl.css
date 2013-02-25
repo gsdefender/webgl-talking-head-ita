@@ -1,0 +1,47 @@
+canvas {
+	width: 100%;
+	height: 100%;
+}
+
+body.finestraPrincipale {
+	background-color:#000000;
+	color:#ffffff;
+	font-family: Arial;
+    font-style: italic;
+}
+
+body.finestraControlli {
+	background-color:#eeeeee;
+	color:#212121;
+	font-family: Arial;
+    font-style: italic;
+}
+
+
+h1.title {
+	text-align:center;
+}
+
+#container {
+	width:100%;
+	height:80%;
+	z-index:-1;
+	position:absolute;
+}
+
+#prompt {
+	width:100%;
+	 height:6%; 
+	 bottom:10px; 
+	 text-align:center; 
+	 position:absolute;
+	
+}
+
+fieldset.fieldset-auto-width {
+         display: inline-block;
+    }
+
+input#integer {
+	text-align: right;
+}
