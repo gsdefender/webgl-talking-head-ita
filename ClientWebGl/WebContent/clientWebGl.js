@@ -134,7 +134,7 @@ function inviaRichiesta()
 		if (richiestaEmozioneInterattiva==true)
 			parametri=parametri+"&emozioneInterattiva=true";
 	
-		xmlhttp=creaConnessioneXMLHTTP_POST("http://localhost:8080/ServerWebGl/RiceviRichiestaUtente",parametri.length);
+		xmlhttp=creaConnessioneXMLHTTP_POST("/ServerWebGl/RiceviRichiestaUtente",parametri.length);
 		
 		xmlhttp.onreadystatechange=function(){  //passiamo alla funzione riempi_campi la risp della servlet
 			if(xmlhttp.readyState==4 && xmlhttp.status==200){
@@ -166,8 +166,8 @@ function aggiorna_render()
 		nuovo_modello = new Pupo();		
 		
 		nuovo_modello.settings =  { 
-				url : "http://localhost:8080/ServerWebGl/Visemi/frase.js", 
-				audio_url: "http://localhost:8080/ServerWebGl/MandaWAV",
+				url : "/ServerWebGl/Visemi/frase.js", 
+				audio_url: "/ServerWebGl/MandaWAV",
 				durate_visemi: window.durate_visemi,
 				scale:0.23, 
 				animating: true};
@@ -187,7 +187,7 @@ function ottieni_durate()
 	var MAX_INT=9007199254740992;
 	parametri="fileRichiesto=durate&randomizer="+THREE.Math.randInt(-MAX_INT, MAX_INT);
 	
-	xmlhttp_durate=creaConnessioneXMLHTTP_POST("http://localhost:8080/ServerWebGl/MandaJSON",parametri.length);
+	xmlhttp_durate=creaConnessioneXMLHTTP_POST("/ServerWebGl/MandaJSON",parametri.length);
 	
 	xmlhttp_durate.onreadystatechange=function(){  //passiamo alla funzione riempi_campi la risp della servlet
 		if(xmlhttp_durate.readyState==4 && xmlhttp_durate.status==200){

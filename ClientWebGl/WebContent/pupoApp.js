@@ -40,7 +40,7 @@ PupoApp.prototype.init = function(param)
 	
 	
 	this.scene.remove(camera); //leviamo la camera di default di THREE.js che è di tipo Prospettico
-	camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, - 5000, 10000 );
+	//camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, - 5000, 10000 );
 	  
 
 	
