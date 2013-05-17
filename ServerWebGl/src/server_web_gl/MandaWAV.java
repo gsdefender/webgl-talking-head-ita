@@ -56,7 +56,7 @@ public class MandaWAV extends HttpServlet {
 		
         
         // Get the MIME type of the image
-        String mimeType = getServletContext().getMimeType(filename); //la prima funzione mi restituisce un oggetto di servletContext che possiede le proprietà di questa servlet. La seconda funzione determina il tipo del file che gli sto passando alla doGet
+        String mimeType = getServletContext().getMimeType(filename); //la prima funzione mi restituisce un oggetto di servletContext che possiede le propriet di questa servlet. La seconda funzione determina il tipo del file che gli sto passando alla doGet
         if (mimeType == null) {
         	getServletContext().log("Could not get MIME type of "+filename);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);

@@ -147,7 +147,11 @@ public class RiceviRichiestaUtente extends HttpServlet {
 			try {
 				
 					json_parsato = (JSONObject)parser.parse(new FileReader(nomeFile));
-				} catch (ParseException | IOException e) {
+				} catch (ParseException e) {                                
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                                catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

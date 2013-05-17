@@ -8,10 +8,10 @@ public abstract class TextPatcher {
 
 	public static String Correggi(String testo) {
 
-		String res = testo.replaceAll(" ha", " à");
-		res = res.replaceAll("ha ", "à ");
-		res = res.replaceAll(" Ha", " à");
-		res = res.replaceAll("Ha ", "à ");
+		String res = testo.replaceAll(" ha", " a");
+		res = res.replaceAll("ha ", "a ");
+		res = res.replaceAll(" Ha", " a");
+		res = res.replaceAll("Ha ", "a ");
 		// aggiunge un silenzio iniziale
 		res = ",, ".concat(res);
 		return res;
